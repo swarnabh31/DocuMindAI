@@ -1,13 +1,14 @@
-# DocuMind AI v2 (Professional RAG) ⚡
+# DocuMind AI (Professional RAG) ⚡
 
-A professional-grade, offline document intelligence tool. This version transforms your local files into a searchable knowledge base with the ability to generate technical content.
+A professional-grade, offline document intelligence tool. DocuMind AI transforms your local files into a searchable knowledge base, allowing you to query complex documents or synthesize them into high-impact professional reports.
 
-## 🚀 New in Version 2
-- **Streamlit UI**: A modern, intuitive web interface.
-- **Multi-Format Support**: Now supports `.pdf`, `.docx`, `.doc`, `.txt`, and `.md`.
-- **Advanced Prompting**: Specialized system prompts for "Research Assistant" and "Technical Writer" personas.
-- **Technical Blog Mode**: A dedicated mode to transform raw summaries into structured, professional blog posts.
-- **Enhanced Retrieval**: Increased chunk sizes and higher retrieval counts (`k=5`) for better context window utilization.
+## 🚀 Key Features
+- **Multi-Format Support**: Seamlessly handles `.pdf`, `.docx`, `.doc`, `.txt`, and `.md`.
+- **Professional Personas**: 
+    - **Chat Mode**: High-precision research assistant for accurate, context-aware answers.
+    - **Professional Mode**: Transforms raw data into structured, executive-style reports with bolded headers and key insights.
+- **100% Offline & Private**: Powered by Ollama, ensuring your data never leaves your machine.
+- **Advanced Retrieval**: Optimized chunking and `k=5` retrieval for superior context synthesis.
 
 ## 🛠 Tech Stack
 - **Frontend**: Streamlit
@@ -21,7 +22,7 @@ A professional-grade, offline document intelligence tool. This version transform
 
 ### 1. Prerequisites
 - Install [Ollama](https://ollama.ai/).
-- Pull the models:
+- Pull the required models:
   ```bash
   ollama pull deepseek-r1:latest
   ollama pull nomic-embed-text
@@ -32,13 +33,32 @@ A professional-grade, offline document intelligence tool. This version transform
 pip install -r requirements.txt
 ```
 
-### 3. Running the Application
+## 🕹️ Usage Options
+
+You can interact with the tool in two ways: via the professional Web UI or the lightweight CLI.
+
+### Option A: The Professional Web UI (Recommended)
+The modern interface for a seamless, high-impact experience.
 ```bash
 streamlit run app.py
 ```
-
-## 📁 How it Works
+**Workflow:**
 1. **Upload**: Drop your files in the sidebar.
-2. **Index**: Click 'Process Documents' to create a local vector embedding of your files.
-3. **Switch Mode**: Choose between 'Chat' (for precise answers) and 'Technical Blog' (for high-quality long-form content).
-4. **Query**: Ask your questions in the chat interface.
+2. **Index**: Click 'Process Documents' to create your local vector knowledge base.
+3. **Switch Mode**: Choose between **Chat** and **Professional** in the dropdown.
+4. **Query**: Start chatting with your documents.
+
+### Option B: The Lightweight CLI
+Ideal for quick tests or integration into other scripts.
+1. **Ingest Documents**:
+   - Place your PDFs/files in your source directory.
+   - Run: `python ingest.py`
+2. **Chat**:
+   - Run: `python chat.py`
+
+## 📁 Project Structure
+- `app.py`: The main Streamlit application (V2).
+- `ingest.py`: CLI script to process and embed documents.
+- `chat.py`: CLI script for interactive querying.
+- `requirements.txt`: Project dependencies.
+- `.gitignore`: Ensures local databases and secrets aren't uploaded.
