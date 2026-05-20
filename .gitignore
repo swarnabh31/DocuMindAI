@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Vector DB
+chroma_db/
+
+# PDFs
+pdfs/*.pdf
+
+# Environment
+.env
+.venv/
+venv/
